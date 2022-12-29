@@ -1,6 +1,6 @@
 <?php
 include_once('conexion.php');
-$data - array();
+$data = array();
 $q = mysqli_query($conn, "SELECT * FROM `fichas`");
 
 while ($row = mysqli_fetch_object($q)){
