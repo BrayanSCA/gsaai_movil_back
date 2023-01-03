@@ -3,12 +3,9 @@ include_once('conexion.php');
 $input = file_get_contents('php://input');
 $datos = json_decode($input, true);
 $message = array();
-$fecha = $datos['fecha'];
-$cod = $datos['cod_ficha'];
-$nom = $datos['nom_ficha'];
-$codactual = $datos['codactual']; 
+$di = $_GET['di'];
 
-$q = mysqli_query($conn, "UPDATE fichas SET fecha= '$fecha', cod_ficha='$cod', nom_ficha='$nom' WHERE cod_ficha = '$codactual'"); 
+$q = mysqli_query($conn, "DELETE FROM `usuarios` WHERE `di` = '{$di} LIMIT 1'");
 
 if($q){
     http_response_code(201);

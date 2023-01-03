@@ -3,12 +3,18 @@ include_once('conexion.php');
 $input = file_get_contents('php://input');
 $datos = json_decode($input, true); // llamar datos del formulario
 $message = array();
+$di = $datos['di'];
 $fecha = $datos['fecha'];
-$cod = $datos['cod_ficha'];
-$nom = $datos['nom_ficha'];
+$nom = $datos['nombres'];
+$ape = $datos['apellidos'];
+$mail = $datos['correo'];
+$pass = $datos['contrasena'];
+$rol = $datos['rol'];
+$ficha = $datos['ficha'];
 
 if ($datos) {
-    $q = mysqli_query($conn, "INSERT INTO `fichas` (`fecha`, `cod_ficha`,`nom_ficha`) VALUES ('$fecha','$cod','$nom')");
+    $q = mysqli_query($conn, "INSERT INTO `usuarios` (`di`,`fecha`,`nombres`,`apellidos`,`correo`,`contrasena`,`rol`,`ficha`) 
+    VALUES ('$di','$fecha','$nom','$ape','$mail','$pass','$rol','$ficha')");
 
     if ($q) {
         http_response_code(201);
