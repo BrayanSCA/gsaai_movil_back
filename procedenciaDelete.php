@@ -3,13 +3,9 @@ include_once('conexion.php');
 $input = file_get_contents('php://input');
 $datos = json_decode($input, true);
 $message = array();
-$cod = $datos['cod_mp'];
-$nom = $datos['nombre_mp'];
-$rel = $datos['relacion_cn'];
-$stk = $datos['stock'];
-$codactual = $datos['codactual']; 
+$id = $_GET['cod_procedencia'];
 
-$q = mysqli_query($conn, "UPDATE materias_primas SET cod_mp='$cod', nombre_mp='$nom', stock='$stk', relacion_cn='$rel' WHERE cod_mp = '$codactual'"); 
+$q = mysqli_query($conn, "DELETE FROM procedencias WHERE `cod_procedencia` = '{$id} LIMIT 1'");
 
 if($q){
     http_response_code(201);

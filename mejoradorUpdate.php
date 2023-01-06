@@ -3,13 +3,13 @@ include_once('conexion.php');
 $input = file_get_contents('php://input');
 $datos = json_decode($input, true);
 $message = array();
-$cod = $datos['cod_mp'];
-$nom = $datos['nombre_mp'];
-$rel = $datos['relacion_cn'];
-$stk = $datos['stock'];
+$cod = $datos['cod_mejorador'];
+$nom = $datos['nom_mejorador'];
+$car = $datos['caracteristicas'];
 $codactual = $datos['codactual']; 
 
-$q = mysqli_query($conn, "UPDATE materias_primas SET cod_mp='$cod', nombre_mp='$nom', stock='$stk', relacion_cn='$rel' WHERE cod_mp = '$codactual'"); 
+$q = mysqli_query($conn, "UPDATE mejoradores SET cod_mejorador='$cod', nom_mejorador='$nom', caracteristicas='$car'
+ WHERE cod_mejorador = '$codactual'"); 
 
 if($q){
     http_response_code(201);
