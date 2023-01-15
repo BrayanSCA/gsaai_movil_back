@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$name = 'db-gsaai';
+$name = 'gsaai-db';
 $user = 'root';
 $pass = '';
 

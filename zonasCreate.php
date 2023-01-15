@@ -7,6 +7,7 @@ $fecha = $datos['fecha'];
 $cod = $datos['cod_zona'];
 $nom = $datos['nom_zona'];
 
+
 if ($datos) {
     $q = mysqli_query($conn, "INSERT INTO `zonas` (`cod_zona`, `fecha`,`nom_zona`) VALUES ('$cod','$fecha','$nom')");
 

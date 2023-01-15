@@ -2,9 +2,9 @@
 include_once('conexion.php');
 
 $data = array();
-$id = $_GET['cod_actualiza'];
+$id = $_GET['historial_id'];
 
-$q = mysqli_query($conn, "SELECT * FROM `actualizar_pila` WHERE `cod_actualiza` LIKE '%$id%'");
+$q = mysqli_query($conn, "SELECT * FROM `historial_pila` WHERE `historial_id` LIKE '%$id%'");
 
 while ($row = mysqli_fetch_object($q)){
     $data[] = $row;

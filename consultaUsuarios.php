@@ -24,6 +24,7 @@ if(count($rows)===0){
     $json = [
         "mensaje" => "ok",
         "usuario"=> [
+            'di'=>$respuesta['di'],
             'nombres'=>$respuesta['nombres'],
             'apellidos'=>$respuesta['apellidos'],
             'rol' =>$respuesta['rol'],
@@ -35,9 +36,4 @@ if(count($rows)===0){
 }
 
 echo json_encode( $json ); 
-
-/* $join = mysqli_query($conn, "SELECT usuarios.di, usuarios.fecha, usuarios.nombres, 
-usuarios.apellidos, usuarios.correo, usuarios.contrasena, roles.nom_rol, usuarios.ficha,
-roles.nom_rol FROM usuarios LEFT JOIN roles ON usuarios.rol = roles.cod_rol");
-$result = $join */
 ?>

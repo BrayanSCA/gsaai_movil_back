@@ -1,7 +1,7 @@
 <?php
 include_once('conexion.php');
 $data = array();
-$q = mysqli_query($conn, "SELECT * FROM `conformacion_pila`");
+$q = mysqli_query($conn, "SELECT * FROM `pila`");
 
 while ($row = mysqli_fetch_object($q)){
     $data[] = $row;

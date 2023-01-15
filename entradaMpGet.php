@@ -2,9 +2,9 @@
 include_once('conexion.php');
 
 $data = array();
-$id = $_GET['cod_entra_mp'];
+$id = $_GET['id'];
 
-$q = mysqli_query($conn, "SELECT * FROM `entrada_mp` WHERE `cod_entra_mp` LIKE '%$id%'");
+$q = mysqli_query($conn, "SELECT * FROM `materia_prima_ingresada` WHERE `id` LIKE '%$id%'");
 
 while ($row = mysqli_fetch_object($q)){
     $data[] = $row;

@@ -6,10 +6,9 @@ $message = array();
 $cod = $datos['cod_mp'];
 $nom = $datos['nombre_mp'];
 $rel = $datos['relacion_cn'];
-$stk = $datos['stock'];
 $codactual = $datos['codactual']; 
 
-$q = mysqli_query($conn, "UPDATE materias_primas SET cod_mp='$cod', nombre_mp='$nom', stock='$stk', relacion_cn='$rel' WHERE cod_mp = '$codactual'"); 
+$q = mysqli_query($conn, "UPDATE materias_primas SET cod_mp='$cod', nombre_mp='$nom', relacion_cn='$rel' WHERE cod_mp = '$codactual'"); 
 
 if($q){
     http_response_code(201);

@@ -3,16 +3,16 @@ include_once('conexion.php');
 $input = file_get_contents('php://input');
 $datos = json_decode($input, true); // llamar datos del formulario
 $message = array();
-$fecha = $datos['fecha_inicio'];
+$cid = $datos['pila_id'];
 $cod = $datos['cod_conf_pila'];
-$res = $datos['responsable'];
-$zon = $datos['zona'];
+$fecha = $datos['fecha_inicio'];
+$res = $datos['responsable_id'];
 $obs = $datos['observaciones'];
 
 
 if ($datos) {
-    $q = mysqli_query($conn, "INSERT INTO `conformacion_pila` (`cod_conf_pila`, `fecha_inicio`,`responsable`, `zona`, `observaciones`) 
-    VALUES ('$cod','$fecha','$res', '$zon','$obs')");
+    $q = mysqli_query($conn, "INSERT INTO `pila` (`pila_id`,`cod_conf_pila`, `fecha_inicio`,`responsable_id`, `observaciones`) 
+    VALUES ('$cid','$cod','$fecha','$res','$obs')");
 
     if ($q) {
         http_response_code(201);
